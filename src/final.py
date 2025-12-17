@@ -125,11 +125,14 @@ while True:
 
     # Drowsiness tracking
     current_time = time.time()
+
     if eyes_closed:
         if closed_start_time is None:
             closed_start_time = current_time
-        elif current_time - closed_start_time >= DROWSY_THRESHOLD:
-            cv2.putText(frame, "DROWSY!", (50,110),
+        else: 
+            elapsed_time = current_time - closed_start_time
+            if elapsed_time >= DROWSY_THRESHOLD:
+                cv2.putText(frame, "DROWSY!", (50,110),
                         cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,0,255), 3)
     else:
         closed_start_time = None
