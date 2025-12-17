@@ -10,7 +10,7 @@ from collections import deque
 # CONFIG
 # ----------------------------
 IMG_SIZE = 32
-MODEL_PATH = "eye_state_custom_cnn_v5.h5"
+MODEL_PATH = "eye_state_custom_cnn_v6.h5"
 DROWSY_THRESHOLD = 2.0  # seconds
 EAR_THRESHOLD = 0.25    # below this considered closed
 CNN_WEIGHT = 0.6         # weighting for CNN probability
