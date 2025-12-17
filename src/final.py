@@ -135,8 +135,10 @@ while True:
         closed_start_time = None
 
     cv2.imshow("Drowsiness Detection", frame)
+    
+    # If q key was pressed, break from loop
     key = cv2.waitKey(1) & 0xFF
-    if key == 27:
+    if key == ord("q"):
         break
 
 cap.release()

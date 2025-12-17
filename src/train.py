@@ -16,7 +16,16 @@ from sklearn.metrics import roc_curve, auc, confusion_matrix, classification_rep
 # -------------------------------
 # CONFIG
 # -------------------------------
-DATA_ROOT = r"C:/Users/haris/mrlEyes/mrlEyes_2018_01"
+DATA_ROOT = os.environ.get("DATA_ROOT")
+
+if DATA_ROOT is None: 
+    raise RuntimeError(
+        "Environment variable DATA_ROOT is not set.\n"
+        "Example:\n"
+        "  Windows (PowerShell): setx DATA_ROOT \"C:/path/to/mrlEyes_2018_01\"\n"
+        "  Linux/Mac: export DATA_ROOT=/path/to/mrlEyes_2018_01"
+    )
+
 TRAIN_RATIO = 0.7
 VAL_RATIO = 0.15
 TEST_RATIO = 0.15
