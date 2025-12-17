@@ -101,7 +101,7 @@ def balance_split(samples):
     closed_eyes = random.sample(closed_eyes, min_count)
 
     balanced = open_eyes + closed_eyes
-    random.shuffle(balanced)
+    #random.shuffle(balanced)
 
     return balanced
 
